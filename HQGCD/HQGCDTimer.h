@@ -9,9 +9,6 @@
 #import <Foundation/Foundation.h>
 @class HQGCDQueue;
 
-#define WEAK_SELF __weak typeof(self)weakSelf = self
-#define STRONG_SELF __strong typeof(weakSelf)self = weakSelf
-
 @interface HQGCDTimer : NSObject
 
 @property (strong, readonly, nonatomic) dispatch_source_t dispatchSource;

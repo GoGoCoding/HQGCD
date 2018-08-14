@@ -49,9 +49,9 @@
                               interval,
                               0);
     
-    WEAK_SELF;
+    __weak typeof(self)weakSelf = self;
     dispatch_source_set_event_handler(self.dispatchSource, ^{
-        STRONG_SELF;
+        __strong typeof(weakSelf)self = weakSelf;
         block();
         if (!repeat) {
             [self cancel];
